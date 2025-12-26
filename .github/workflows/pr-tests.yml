@@ -36,6 +36,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=YOUR_PROJECT_KEY
-            -Dsonar.organization=YOUR_ORG
+            -Dsonar.projectKey=AbubakrHamdy_Threads-Philisopher-Dinning-Problem
+            -Dsonar.organization=abubakrhamdy
             -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
