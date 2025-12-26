@@ -39,3 +39,4 @@ jobs:
             -Dsonar.projectKey=AbubakrHamdy_Threads-Philisopher-Dinning-Problem
             -Dsonar.organization=abubakrhamdy
             -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
+            -Dsonar.java.binaries=target/classes
