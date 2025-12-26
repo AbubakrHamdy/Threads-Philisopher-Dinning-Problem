@@ -33,10 +33,10 @@ class OrderServiceTest {
         BigDecimal result = orderService.calculateFinalPrice(
                 BigDecimal.valueOf(100),
                 2,
-                BigDecimal.valueOf(10)
+                BigDecimal.valueOf(101)
         );
 
-        assertEquals(BigDecimal.valueOf(180), result);
+        assertEquals(BigDecimal.valueOf(1801), result);
     }
 
     @Test
