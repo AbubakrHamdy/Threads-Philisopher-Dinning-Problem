@@ -1,12 +1,13 @@
 package test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import java.math.BigDecimal;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import utilities.OrderService;
+
+import java.math.BigDecimal;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class OrderServiceTest {
 
@@ -53,25 +54,19 @@ class OrderServiceTest {
 
     @Test
     void shouldThrowExceptionWhenQuantityIsInvalid() {
-        assertThrows(
-                IllegalArgumentException.class,
-                () -> orderService.calculateFinalPrice(
-                        BigDecimal.valueOf(100),
-                        0,
-                        BigDecimal.ZERO
-                )
+        assertThrows(IllegalArgumentException.class,
+                () -> callCalculate(BigDecimal.valueOf(100), 0, BigDecimal.ZERO)
         );
     }
 
     @Test
     void shouldThrowExceptionWhenDiscountIsInvalid() {
-        assertThrows(
-                IllegalArgumentException.class,
-                () -> orderService.calculateFinalPrice(
-                        BigDecimal.valueOf(100),
-                        1,
-                        BigDecimal.valueOf(150)
-                )
+        assertThrows(IllegalArgumentException.class,
+                () -> callCalculate(BigDecimal.valueOf(100), 1, BigDecimal.valueOf(150))
         );
+    }
+
+    private void callCalculate(BigDecimal price, int quantity, BigDecimal discount) {
+        orderService.calculateFinalPrice(price, quantity, discount);
     }
 }
